@@ -10,6 +10,12 @@ h2 {
     page-break-before: always;
 }
 
+@media print {
+    body {
+        page-break-inside: avoid;
+    }
+}
+
 div {
     page‐break‐after: always;
 }
@@ -29,4 +35,22 @@ a[href]:after {
 
 a[href^="http"]:not([href*="github.com"]):after {
     content: " ("attr(href) ")";
+}
+
+body>*:not(main) {
+    display: none;
+}
+
+span {
+    color: black;
+    font-weight: bold;
+}
+
+.text_danger {
+    color: black;
+    font-weight: bold;
+}
+
+.img_1 {
+    page-break-before: always;
 }
