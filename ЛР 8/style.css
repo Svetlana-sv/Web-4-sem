@@ -1,0 +1,52 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+}
+
+header {
+    background-color: aquamarine;
+}
+
+main {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    /*пространство между и вокруг элементов контента*/
+    justify-content: center;
+    /*выравнивает флекс-элементы внутри контейнера в перпендикулярном направлении*/
+    align-items: center;
+    /*устанавливает распределение пространства между и вокруг элементами контента*/
+    align-content: flex-start;
+    
+    margin: 10px;
+}
+
+.item {
+    background-color: bisque;
+    padding: 10px;
+    margin: 10px;
+
+}
+
+.flex-item-1 {
+    flex-basis: 50px;
+    flex-shrink: 1; /*определяет фактор сжатия flex-элемента*/
+}
+
+.flex-item-2 {
+    flex-basis: 100px;
+    flex-shrink: 2;
+}
+
+.flex-item-3 {
+    flex-basis: 200px;
+    flex-shrink: 3;
+}
+@media (max-width: 750px){
+    main{
+        flex-direction: column;
+    }
+    .flex-item-1,.flex-item-2,.flex-item-3{
+        flex-basis: auto;
+    }
+}
