@@ -6,6 +6,6 @@
 | ЛР4       | Макет ||
 | ЛР5       | Печать ||
 | ЛР6       | Анимационный ролик ||
-| ЛР7       | CSS Grid ||
+| ЛР7       | CSS Grid | [ЛР7](https://github.com/Svetlana-sv/Web-4-sem/tree/main/%D0%9B%D0%A0%207)|
 | ЛР8       | CSS Flexbox ||
 | ЛР9       |||
