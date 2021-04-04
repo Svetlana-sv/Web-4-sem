@@ -1,4 +1,6 @@
-@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@400;400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@100;400&display=swap');
+
+ 
 
 * {
     box-sizing: border-box;
@@ -9,6 +11,8 @@
 
 button {
     outline: none;
+    border: none;
+    color: #161616;
 }
 
 
@@ -25,10 +29,16 @@ header {
     max-width: 1900px;
     margin-left: auto;
     margin-right: auto;
-    
+
+}
+
+.alternative__menu {
+    display: none;
+
 }
 
 .menu {
+    display: flex;
     align-items: center;
     text-align: center;
     max-width: 100%;
@@ -37,7 +47,7 @@ header {
     justify-content: center;
 }
 
-.menu__item {}
+
 
 .menu__item__border {
     border: 0.5px #ffffff solid;
@@ -48,7 +58,7 @@ header {
     margin-left: 15px;
 }
 
-.container__menu {}
+
 
 nav {
     max-width: 1900px;
@@ -74,6 +84,8 @@ li {
 ul {
     display: flex;
     list-style: none;
+    text-align: center;
+    flex-direction: row;
     margin-top: 0px;
     padding: 15px;
 }
@@ -87,7 +99,7 @@ a {
     max-width: 100%;
     font-family: 'Raleway';
     margin-top: 170px;
-    margin-left: 40px;
+    padding-left: 170px;
 }
 
 .header__block__text {
@@ -112,9 +124,11 @@ a {
 }
 
 .header__block__img {
-    width: 900px;
+    width: 800px;
+    height: 500px;
+    background-image: url(src/header/header_img_back.jpg);
     position: relative;
-    right: -34.9rem;
+    right: -44.9rem;
     top: -16rem;
 }
 
@@ -210,7 +224,7 @@ main {
     padding-top: 4px;
     margin-left: 25px;
     color: #161616;
-    font-weight: 600;
+    font-weight: 200;
     font-size: 16px;
     font-family: 'Raleway', sans-serif;
 }
@@ -400,10 +414,12 @@ footer.nav {
 }
 
 /*МЕДИА-ЗАПРОСЫ*/
+/*для header*/
 @media screen and (max-width: 768px) {
-    ul {
+    .menu ul {
         display: flex;
         flex-direction: column;
+        display: none;
     }
 
     nav {
@@ -417,17 +433,50 @@ footer.nav {
     }
 
     header {
-        height: 800px;
+        background-image: url(src/header/header_img_back.jpg);
+        height: 500px;
     }
 
+    .alternative__menu {
+        display: block;
+        width: 100%;
+        position: relative;
+    }
 
+    .alternative__menu ul {
+        position: absolute;
+        margin-top: 0px;
+        width: 100%;
+    }
+
+    .alternative__menu li {
+        padding-right: 0;
+
+    }
+
+    .header__block {
+        display: block;
+        margin-top: 90px;
+        font-size: 14px;
+        padding-left: 5px;
+        background-image: none;
+    }
 
     .header__block__img {
-        position: static;
-        width: 300px;
-        right: 0;
-        top: 0;
-        overflow: hidden;
+        display: none;
+    }
+
+}
+
+/*для main*/
+@media screen and (max-width: 768px) {
+    .block1__main {
+        padding-top: 40px;
+        max-width: 100%;
+    }
+
+    .title {
+        font-size: 20px;
     }
 
     .img_map {
@@ -436,11 +485,12 @@ footer.nav {
     }
 
     .block4__container__center {
-       padding: 0;
-       margin: 0;
-       text-align: center;
+        padding: 0;
+        margin: 0;
+        text-align: center;
     }
-    .block4__container{
+
+    .block4__container {
         height: 100%;
     }
 
@@ -452,16 +502,18 @@ footer.nav {
         padding-top: 10px;
         width: 100%;
     }
+
     .block5__container__center {
         padding-top: 10px;
         margin: 0;
         text-align: center;
-     }
-     .block5__container{
-         height: 100%;
-         margin-top: 30px;
-     }
- 
+    }
+
+    .block5__container {
+        height: 100%;
+        margin-top: 30px;
+    }
+
     .block5__container__img {
         position: static;
         right: 0;
@@ -503,4 +555,30 @@ footer.nav {
         width: 249px;
         height: 55px;
     }
+
+    footer .menu ul {
+        display: flex;
+        flex-direction: column;
+    }
+
+    footer .img1 {
+        display: none;
+    }
+
+    footer .img2 {
+        display: none;
+    }
+}
+
+#buttons_menu_img {
+    position: absolute;
+    right: 15px;
+    width: 30px;
+    height: 30px;
+    background-image: url(src/header/menu.png);
+    background-repeat: no-repeat;
+}
+
+#buttons_menu_logo {
+    padding-top: 5px;
 }

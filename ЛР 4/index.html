@@ -10,11 +10,18 @@
 </head>
 
 <body>
-    <header>
+    <header id=header>
         <div class="container">
+            <div class="alternative__menu" >
+                <ul>
+                    <li id="buttons_menu_logo"><a class="menu__item menu__item__border" href="#">VELES</a></li>
+                    <li id="buttons_menu_img" onclick="showHide('list','buttons_menu_logo','buttons_menu_img','block','header')"><a
+                            class="menu__item menu__item__img" href="#"></a></li>
+                </ul>
+            </div>
             <div class="menu">
                 <nav>
-                    <ul>
+                    <ul id="list">
                         <li><a class="menu__item menu__item__border" href="#">VELES</a></li>
                         <li><a class="menu__item" href="#">Земля</a></li>
                         <li><a class="menu__item" href="#">Крановые площадки</a></li>
@@ -29,24 +36,23 @@
                 </nav>
             </div>
 
-
-            <div class="header__block">
+            <div class="header__block" id="block">
                 <div>
                     <div class="header__block__text">выгрузка вагонов, АРЕНДА
                         ЗЕМЛИ, КРаНОВЫХ ПЛОЩАДОК,
                         ответственное хранение</div>
                     <button class="header__block__button">Заказать</button>
                 </div>
-               
+
             </div>
-            <img class="header__block__img" src="src/header/header_img_back.jpg">
+            <div class="header__block__img"></div>
+
         </div>
     </header>
 
     <main>
         <div class="block1__main">
-            <p style="margin-bottom: 70px; font-weight: bold; font-weight: 600; text-align: center;
-                font-size: 30px;">Чем мы можем быть полезны?</p>
+            <p class="title" style="margin-bottom: 70px;">Чем мы можем быть полезны?</p>
             <div class="main__container">
                 <div class="main__container__item"><img src="src/main/1.png" alt="">
                     <p class="main__container__item__text">Крановая площадка</p>
@@ -242,15 +248,38 @@
                         <li><a class="menu__item" href="#">выгрузка вагонов</a></li>
                         <li><a class="menu__item" href="#">фасовка</a></li>
                         <li><a class="menu__item" href="#">щебень</a></li>
-                        <li><img src="src/header/phone.png"><a class="menu__item menu__item__img" href="#">+7 (927)
+                        <li class="img1"><img src="src/header/phone.png"><a class="menu__item menu__item__img" href="#">+7 (927)
                                 678-45-14</a></li>
-                        <li><img src="src/header/geo.png"><a class="menu__item menu__item__img" href="#">г. Казань,
+                        <li class="img2"><img src="src/header/geo.png"><a class="menu__item menu__item__img" href="#">г. Казань,
                                 Складская 20</a></li>
                     </ul>
                 </nav>
             </div>
         </div>
     </footer>
+
+    <script>
+        function showHide(list,logo,button,block,header) {
+                var obj = document.getElementById(list);
+                var but = document.getElementById(button);
+                var logo = document.getElementById(logo);
+                var header = document.getElementById(header);
+                var block = document.getElementById(block);
+                if (obj.style.display != "block") {
+                    obj.style.display = "block";
+                    logo.style.display = "none";
+                    block.style.display = "none";
+                    but.style.backgroundImage = 'url(src/header/close.png)';
+                    header.style.backgroundImage = 'none';
+                } else {
+                    obj.style.display = "none"; 
+                    logo.style.display = "block";
+                    block.style.display = "block";
+                    but.style.backgroundImage = 'url(src/header/menu.png)';
+                    header.style.backgroundImage = 'url(src/header/header_img_back.jpg)';
+                }
+        }
+    </script>
 </body>
 
 </html>
