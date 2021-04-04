@@ -16,8 +16,8 @@ main {
     /*выравнивает флекс-элементы внутри контейнера в перпендикулярном направлении*/
     align-items: center;
     /*устанавливает распределение пространства между и вокруг элементами контента*/
-    align-content: flex-start;
-    
+    align-content: center;
+   
     margin: 10px;
 }
 
@@ -45,8 +45,26 @@ main {
 @media (max-width: 750px){
     main{
         flex-direction: column;
+        align-content: flex-start;
     }
     .flex-item-1,.flex-item-2,.flex-item-3{
         flex-basis: auto;
     }
+}
+
+.container_flex{
+    display: flex;
+    flex: 1;
+    flex-wrap: nowrap;
+    flex-flow: row-reverse wrap-reverse;
+    /*пространство между и вокруг элементов контента*/
+    justify-content: center;
+    /*выравнивает флекс-элементы внутри контейнера в перпендикулярном направлении*/
+    align-items: center;
+    /*устанавливает распределение пространства между и вокруг элементами контента*/
+    align-content: center;
+}
+.item-3{
+    order: -1;
+    background-color: rgb(218, 97, 97);
 }
