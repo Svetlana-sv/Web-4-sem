@@ -8,4 +8,8 @@
 | ЛР6       | Анимационный ролик ||
 | ЛР7       | CSS Grid | [ЛР7](https://github.com/Svetlana-sv/Web-4-sem/tree/main/%D0%9B%D0%A0%207)|
 | ЛР8       | CSS Flexbox | [ЛР8](https://github.com/Svetlana-sv/Web-4-sem/tree/main/%D0%9B%D0%A0%208)|
-| ЛР9       |||
+| ЛР9       | assistive technologies | |
+| ЛР10      | Препроцессоры | |
+| ЛР11      | | |
+| ЛР12      | | |
+| ЛР13      | | |
