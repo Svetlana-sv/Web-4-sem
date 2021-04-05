@@ -69,8 +69,6 @@ aside {
 }
 
 .container {
-    background-image: url(img/star-2823526_1280.jpg);
-    background-repeat: no-repeat;
     padding-bottom: 10px;
     padding-right: 10px;
 
@@ -174,8 +172,12 @@ input {
     text-align: center;
 
 }
-
 .container__form__form__button a {
+    color: #fff;
+    font-size: 12px;
+    text-decoration: none;
+}
+.registration__button a {
     color: #fff;
     font-size: 20px;
     text-decoration: none;
@@ -198,3 +200,5 @@ input {
             "footer  footer";
     }
 }
+
+
