@@ -1,0 +1,21 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap');
+$fs:24px;
+$primaryColor:whitesmoke;
+body {
+    margin: 0;
+    padding: 0;
+    background-color: whitesmoke;
+    font-family: 'Roboto', sans-serif;
+    font-size: $fs;
+}
+
+footer {
+    background-color: black;
+    a {
+        color: $primaryColor;
+        &:hover {
+            font-size: $fs+6px;
+            text-decoration: none;
+        }
+    }
+}
