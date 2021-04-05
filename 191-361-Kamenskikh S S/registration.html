@@ -10,15 +10,17 @@
 <body>
     <header>
         <div>
-            <object type="img/1024px-Division_of_the_Earth_into_Gauss-Krueger_zones_-_Globe.svg.png" data="SvgImg.svg" width="100" height="100">
-                <img src="img/1024px-Division_of_the_Earth_into_Gauss-Krueger_zones_-_Globe.svg.png" width="100" height="100" alt="image" />
-              </object>
+            <object type="img/logo.svg" data="SvgImg.svg"
+                width="100" height="100">
+                <img src="img/logo.svg" width="100"
+                    height="100" alt="image" />
+            </object>
         </div>
         <p>Космические войны</p>
         <p>Разработчик Каменских С.С. 191-361 (Вариант 2)</p>
     </header>
     <main>
-        <form action="">
+        <form name="contact_form" method="post" action="dumb.htm" onsubmit="return validate_form ( );">
             <legend>Регистрация на сайте</legend>
             <div>
                 <label for="">Введите имя:</label>
@@ -30,11 +32,11 @@
             </div>
             <div>
                 <label for="">Введите отчество (необязательно):</label>
-                <input type="text" id="phone" name="user_phone" placeholder="Фамилия">
+                <input type="text" id="phone" name="user_phone" placeholder="Отчество">
             </div>
             <div>
                 <label for="">Введите e-mail:</label>
-                <input required type="text" id="phone" name="user_phone" placeholder="E-mail">
+                <input required type="email" id="phone" name="user_phone" placeholder="E-mail">
             </div>
             <div>
                 <label for="">Введите номер телефона в формате +7-xxx-xxx-xx-xx, где вместо x должна быть цифра(необязательно):</label>
@@ -42,7 +44,7 @@
             </div>
             <div>
                 <label for="">Введите пароль:</label>
-                <input required type="text" id="phone" name="user_phone" placeholder="Пароль">
+                <input required type="password" id="phone" name="user_phone" placeholder="Пароль">
             </div>
             <div>
                 <button class="container__form__form__button" type="submit" value="Отправить">Зарегистрироваться</button>

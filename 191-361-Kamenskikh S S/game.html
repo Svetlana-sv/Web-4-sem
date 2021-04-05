@@ -50,6 +50,67 @@ ul {
     -o-background-size:cover;
     background-size: cover;
 }
+#flyjet {
+      width: 40px;
+      height: 24px;
+      transition: all 3s;
+    }
+
+    #flyjet.growing {
+      width: 400px;
+      height: 240px;
+    }
+    .progress {
+   
+   animation: go-left-right 3s infinite alternate;
+   -webkit-animation: go-left-right 3s infinite alternate;
+
+   position: relative;
+ 
+   width: 50px;
+   height: 20px;
+   
+ }
+
+ @keyframes go-left-right {   
+   0% {
+     left: 0px;              
+   }
+   100% {
+     left: calc(100% - 550px); 
+   }
+ }
+ img{
+     width: 200px;
+ }
+
+ .star {
+  width: 100px;
+  height: 120px;
+  top: 50%;
+  left: 80%;
+}
+
+.star {
+  width: 100px;
+  position: absolute;
+  content: '';
+  background-repeat: no-repeat;
+  transform: translate3d(0, - 100%, 0);
+  animation: spin 1.4s infinite linear;
+}
+
+@keyframes spin {
+  0% {
+    transform: translate3d(0, -100%, 0);
+  }
+  50% {
+    transform: translate3d(0, 100%, 0);
+  }
+  100% {
+    transform: translate3d(0, -100%, 0);
+  }
+}
 </style>
 <body style="display: block;">
     <header>
@@ -63,13 +124,27 @@ ul {
        
     </header>
     <div class="game__container">
-        По нажатию на кнопку Старт или Вход открывается страница game.html
-        При загрузке страницы показывается подсказка в течение 5-10 секунд. Подсказка оформлена в стиле. Подсказка анимирована (плавно появляется и исчезает с экрана).
-        Экран содержит горизонтальное меню (например, “Игра”, “Настройки”, “Рейтинг”).
-        Анимировать минимум 4 объекта. Использовать анимацию при наведении на объект, анимация перемещения объекта по полю.
-        Добавить блок очков (баллов).
+        <img id="flyjet" src="img/pluto-2201446_960_720.png">
+        <p class="text" style="color: #fff; font-size: 35px;">Кликни!</p>
+
+        <div class="animation"><img src="img/rocket-312767_960_720.png" alt="" class="rocket"></div>
+        <div class="progress"><img src="img/spaceship-2808988_960_720.png" alt=""></div>
+        <div class="star"><img src="img/space-station-161807_960_720.png" alt=""></div>
     </div>
    
-
+    <script>
+        flyjet.onclick = function() {
+    
+          let ended = false;
+    
+          flyjet.addEventListener('transitionend', function() {
+            if (!ended) {
+              ended = true;
+            }
+          });
+    
+          flyjet.classList.add('growing');
+        }
+      </script>
 </body>
 </html>

@@ -97,8 +97,15 @@ aside {
     padding: 5px;
 }
 
-img {
+header img {
     text-align: center;
+    padding: 10px;
+}
+img{
+    text-align: center;
+}
+object{
+    padding: 5px;
 }
 .transform__item:hover{
     transition: all 2s ease-in-out;
@@ -180,6 +187,16 @@ input {
 .registration__button a {
     color: #fff;
     font-size: 20px;
+    text-decoration: none;
+}
+footer{
+    text-align: center;
+ padding: 10px;
+}
+
+footer a{
+    color: #fff;
+    font-size: 26px;
     text-decoration: none;
 }
 
