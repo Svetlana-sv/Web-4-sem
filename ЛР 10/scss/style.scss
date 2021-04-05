@@ -1,0 +1,95 @@
+@import "_nullstyle.scss";
+//основной файл без _ в имени , и он будет пересоздаваться
+
+$textSelection: #10f110;
+$textColor: #000;
+$whPx : 80px;
+/*переменные*/
+$page: 12;
+
+%message {
+    /*шаблон*/
+    border: 1px solid rgb(0, 0, 0);
+    padding: 10px;
+    color: #333;
+}
+
+header {
+    text-align: center;
+    min-height: 40px;
+    background-color: aqua;
+
+    p {
+        font-family: 'Courier New', Courier, monospace;
+        font-size: 16px;
+        color: $textColor;
+
+        &:hover {
+            color: $textSelection;
+            font-size: 25px;
+        }
+    }
+}
+
+@mixin wh {
+    /*миксины*/
+    width: $whPx;
+    height: $whPx;
+    /*использование переменных*/
+}
+
+.num:hover {
+    content: "Страница #{ $page }!";
+    /*сложнеие строк (конструкция #{})*/
+}
+
+/*вложенность*/
+.container {
+    padding: 15px;
+    justify-content: center;
+    width: 600px / 960px * 100%;
+
+    /*Математические операторы*/
+    .flex_container {
+        justify-content: center;
+        display: flex;
+        flex-direction: row;
+        text-align: center;
+        gap: 20px;
+
+        &+.item {
+            background-color: rgb(232, 255, 79);
+        }
+
+        .item {
+            @extend %message;
+            @include wh;
+            background-color: #fdd;
+        }
+
+        .item_1 {
+            @extend.item;
+            background-color: rgb(83, 73, 73);
+        }
+
+
+        p {
+            color: rgb(54, 11, 128);
+            font-size: 40px;
+        }
+    }
+
+    .flex_container_1 {
+        @extend.flex_container;
+
+        .item {
+            background-color: aquamarine;
+        }
+
+        &>div {
+            @include wh;
+            background-color: rgb(242, 255, 127);
+        }
+
+    }
+}
