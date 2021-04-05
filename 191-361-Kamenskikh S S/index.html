@@ -20,6 +20,7 @@
    <main>
     <div class="container">
         <form action="">
+            <legend>Вход в игру</legend>
             <div>
                 <label for="">Введите логин:</label>
             <input type="text" id="name" name="user_name" placeholder="Логин">
@@ -29,7 +30,7 @@
                 <input type="text" id="phone" name="user_phone" placeholder="Пароль">
             </div>
             <div>
-                <button class="container__form__form__button">Вход</button>
+            <button class="container__form__form__button">Вход</button>
             <button class="container__form__form__button">Старт</button>
             <button class="container__form__form__button">Восстановить пароль</button>
             </div>
@@ -40,7 +41,7 @@
     </div>
   
     
-    Ссылка-кнопка регистрации на сайте, переход на страницу с формой регистрации. Форма регистрации содержит минимум 6 полей, часть из которых обязательны. Для некоторых полей задать шаблон для ввода средствами HTML. При отправке формы показываются ошибки, если поле заполнено не по шаблону.
+
     Фоновое изображение (как вы умеете управлять им).
     Описание игры (основные правила). Оформление текста (выделение главных слов, структура текста, ссылки внутри текста).
     Ряд изображений (иллюстрации к игре), оформление, подзаголовок.
@@ -52,16 +53,26 @@
 
 </main>
 <aside>
-    <p>Регистрация на сайте:</p>
-    <button class=""><a href="#">Регистрация</a></button>
-    <p>Описание игры</p>
-    <p>Это космиче...</p>
-    <p>Иллюстарции к игре</p>
-    <div>
-        <img src="img/abstract-all-astronomy-414804.jpg" alt="" width="250" height="200">
-        <p>подпись к картинке</p>
+    <p class="title">Регистрация на сайте:</p>
+    <button class="container__form__form__button"><a href="registration.html">Регистрация</a></button>
+    <p class="title">Описание игры</p>
+    <p class="text">Это 2D игра в жанре экшен. Здесь игрок находится в самом центре действия и управляет им. Главным образом игра связана с испытаниями, которые нужно преодолеть.</p>
+    <p class="title">Иллюстарции к игре</p>
+    <div class="flex-container">
+    <div class="flex-container__item">
+        <img src="img/abstract-all-astronomy-414804.jpg" alt="космос" width="250" height="200">
+        <p>это космос</p>
     </div>
-    <p>Это космиче...</p>
+    <div class="flex-container__item">
+        <img src="img/kisspng-susan-murphy-dreamworks-animation-film-monsters-vs-aliens-5b1515a8b27789.606106541528108456731.jpg" alt="космический монстр" width="250" height="200">
+        <p>космический монстр</p>
+    </div>
+    <div class="flex-container__item">
+        <img class="transform__item" src="img/planet-earth-1457453_960_720.png" alt="планета" width="250" height="200">
+        <p>планета</p>
+    </div>
+</div>
+   
 </aside>
 <footer>
 <h1>Footer</h1>    
