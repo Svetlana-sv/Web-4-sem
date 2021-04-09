@@ -178,8 +178,17 @@ main {
     padding: 3px;
 }
 
+.main__container__item__block img {
+    max-width: 36px;
+    max-height: 36px;
+    position: sticky;
+}
+.rect{
+    width: 250px;
+}
 .main__container__item img {
     width: 300px;
+    
 }
 
 .main__container__item__text {
