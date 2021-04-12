@@ -2,7 +2,7 @@
     box-sizing: border-box;
     padding: 0;
     margin: 0;
-    
+
 }
 
 body {
@@ -19,7 +19,8 @@ main {
     height: 100%;
     min-width: 100%;
 }
-.preview{
+
+.preview {
     animation: preview 5s ease-in-out;
     text-align: center;
     width: 100%;
@@ -29,18 +30,22 @@ main {
     position: absolute;
     top: -100px;
 }
-.preview:hover{
+
+.preview:hover {
     animation-play-state: paused;
 }
-@keyframes preview{
-    0%{
+
+@keyframes preview {
+    0% {
         top: -100px;
     }
-    100%{
+
+    100% {
         top: 25px;
     }
 }
-.rocket{
+
+.rocket {
     animation: rocket 4s infinite linear;
     width: 250px;
     height: 250px;
@@ -50,11 +55,74 @@ main {
     background-position: center;
     background-size: 100%;
     background-repeat: no-repeat;
-    background-image: url("img/rocket.jpg"); 
-    z-index: 1; 
+    background-image: url("img/rocket.jpg");
+    z-index: 1;
 }
-.rocket:hover{
+/*
+.rocket:hover {
     animation-play-state: paused;
+}
+*/
+.rocket-crashed {
+    animation: rocket-crashed 4290ms 1 ease-out;
+    animation-fill-mode: forwards;
+    bottom: -550px;
+    left: 900px;
+    transform: scale(-1, 1);
+}
+
+@keyframes rocket-crashed {
+    0% {
+        left: 900px;
+    }
+
+    90% {
+        left: 400px;
+        width: 200px;
+    }
+
+    99%{
+        left: 400px;
+        opacity: 1;
+    }
+
+    100% {
+        width: 150px;
+        left: 400px;
+        opacity: 0;
+        
+    }
+
+}
+
+@keyframes crash {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+
+}
+
+.crash {
+    background-image: url("img/crash.png");
+    background-size: 100%;
+    background-repeat: no-repeat;
+    position: absolute;
+    left: 230px;
+    bottom: -700px;
+    width: 450px;
+    height: 450px;
+    animation: crash 1s 1 linear;
+    animation-delay: 4s;
+    opacity: 0;
+
+}
+
+.delay::after {
+    animation-delay: 4s;
 }
 
 .planet {
@@ -69,37 +137,42 @@ main {
     background-repeat: no-repeat;
     background-image: url("img/pluto-2201446_960_720.png");
 }
-.planet__item1{
+
+.planet__item1 {
     width: 75px;
     height: 75px;
     bottom: -70px;
     background-image: url("img/planet-earth-1457453_960_720.png");
 }
 
-.planet__item2{
+.planet__item2 {
     width: 50px;
     height: 50px;
     bottom: -10px;
     left: 300px;
     background-image: url("img/planet-1138237_960_720.png");
 }
+
 @keyframes planet {
     0% {
         transform: rotate(0deg)
     }
+
     100% {
         transform: rotate(-360deg)
     }
 }
-@keyframes rocket{
-    0%{
+
+@keyframes rocket {
+    0% {
         left: -300px;
     }
- 
-    100%{
-        left: calc(100% - 300px); 
+
+    100% {
+        left: calc(100% - 300px);
     }
 }
+
 .clock {
     position: absolute;
     width: 150px;
@@ -110,8 +183,9 @@ main {
     border: .2em solid rgb(255, 255, 255);
     border-radius: 50%;
     font-size: 1.2em;
-    }
-  .clock:before {
+}
+
+.clock:before {
     content: "";
     display: inline-block;
     position: absolute;
@@ -122,10 +196,11 @@ main {
     background: rgb(255, 255, 255);
     animation: clock 60s infinite steps(60);
     transform-origin: 0 2.1em;
-    
-    }
+
+}
+
 @keyframes clock {
-    100%{
-     transform: rotate(360deg);
+    100% {
+        transform: rotate(360deg);
     }
-  }
+}
