@@ -15,8 +15,9 @@
     <header>
         <nav class="navbar navbar-expand-lg navbar-light bg-light p-3 border-bottom border-secondary fixed-top">
             <div class="container-fluid">
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <button name="lg" class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false"
+                    aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarNav">
@@ -38,7 +39,8 @@
         <div class="container mb-3" style="margin-top: 100px;">
             <div class="row">
                 <div class="col-1">
-                    <div class="right__block">
+
+                    <nav>
                         <div class="right__block__item">
                             <p>Навигация</p>
                             <ul>
@@ -50,32 +52,43 @@
                         <div class="right__block__item">
                             <p>Размер шрифта:</p>
                             <ul>
-                                <li><button onclick="changeFontSize('header','14px')">Маленький</button></li>
-                                <li><button onclick="changeFontSize('header','20px')">Средний</button></li>
-                                <li><button onclick="changeFontSize('header','30px')">Большой</button></li>
+                                <li><button type="button" name="little"
+                                        onclick="changeFontSize('header','1em')">Маленький</button></li>
+                                <li><button type="button" name="medium"
+                                        onclick="changeFontSize('header','1.5em')">Средний</button></li>
+                                <li><button type="button" name="large"
+                                        onclick="changeFontSize('header','2em')">Большой</button></li>
                             </ul>
                         </div>
                         <div class="right__block__item">
-                            <p>Цвет шрифта:</p>
+                            <p>Цвет фона:</p>
                             <ul>
-                                <li><button onclick="changeColor('#0096a7')" class="color color1"></button></li>
-                                <li><button onclick="changeColor('#59ff4a')" class="color color2"></button></li>
-                                <li><button onclick="changeColor('#000')" class="color color3"></button></li>
+                                <li><button type="button" name="color1" onclick="changeColor('#0096a7')"
+                                        class="color color1"></button></li>
+                                <li><button type="button" name="color2" onclick="changeColor('#59ff4a')"
+                                        class="color color2"></button></li>
+                                <li><button type="button" name="color3" onclick="changeColor('#000')"
+                                        class="color color3"></button></li>
                             </ul>
                         </div>
                         <div class="right__block__item">
                             <p>Стиль шрифта:</p>
                             <ul>
-                                <li><button class="font"
-                                        onclick="changeFontFamily('header','Times New Roman')">Стандартный</button></li>
-                                <li><button class="font" onclick="changeFontFamily('header','Arial')">Arial</button>
+                                <li><button type="button" name="tnr" class="font"
+                                        onclick="changeFontFamily('header','Times New Roman')">Стандартный</button>
                                 </li>
-                                <li><button class="fonr" onclick="changeFontFamily('header','serif')">Serif</button>
+                                <li><button type="button" name="arial" class="font"
+                                        onclick="changeFontFamily('header','Arial')">Arial</button>
+                                </li>
+                                <li><button type="button" name="serif" class="fonr"
+                                        onclick="changeFontFamily('header','serif')">Serif</button>
                                 </li>
                             </ul>
                         </div>
+                    </nav>
 
-                    </div>
+
+
                     <script>
                         function changeFontSize(header, size) {
 
@@ -94,11 +107,11 @@
                             obj.style.backgroundColor = color;
                             sp.className = "";
                             sp.style.fontSize = '24px';
-                            sp.style.fontWeight="bold";
-                            if(color=='#000'){
+                            sp.style.fontWeight = "bold";
+                            if (color == '#000') {
                                 obj.style.color = '#ffffff';
                             }
-                            if(color=='#59ff4a'){    
+                            if (color == '#59ff4a') {
                                 obj.style.color = '#000';
                             }
                         }
@@ -106,7 +119,7 @@
                 </div>
                 <div class="col">
                     <h1>Теория</h1>
-                    <h3>Определение</h3>
+                    <h2>Определение</h2>
                     <p class="text-justify"><span id="span" class="text-danger font-weight-bold">БЭМ</span> (Блок,
                         Элемент,
                         Модификатор) — компонентный подход к веб-разработке. В его основе лежит принцип разделения
@@ -114,7 +127,7 @@
                         независимые блоки. Он позволяет легко и быстро разрабатывать интерфейсы любой сложности и
                         повторно
                         использовать существующий код, избегая «Copy-Paste».</p>
-                    <h3>Для чего нужна БЭМ-методология</h3>
+                    <h2>Для чего нужна БЭМ-методология</h2>
                     <ul>
                         <li>Разработчик должен понимать свой код (даже вернувшись к нему через год) и код любого
                             программиста в
@@ -132,7 +145,7 @@
                             всех БЭМ-проектов и одинаковых правил именования всех сущностей.
                         </li>
                     </ul>
-                    <h3>Ключевые понятия</h3>
+                    <h2>Ключевые понятия</h2>
                     <p>Чтобы ускорить разработку, необходимо облегчить поддержку HTML и CSS отдельных компонентов
                         страницы,
                         сделать код менее связанным.
@@ -143,7 +156,7 @@
                         Это были три ключевых понятия, на которых основывалось большинство правил. Аббревиатура от трех
                         слов: Блок, Элемент и Модификатор стала названием методологии — БЭМ.
                     </p>
-                    <h3>Блок</h3>
+                    <h2>Блок</h2>
                     <ul>
                         <li>Вложенная структура</li>
                         <li>Свободное перемещение</li>
