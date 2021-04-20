@@ -1,0 +1,56 @@
+@page :first {
+    margin: 1cm;
+}
+
+@page :left {
+    margin: 1cm 3cm 1cm 1.5cm;
+}
+
+h2 {
+    page-break-before: always;
+}
+
+@media print {
+    body {
+        page-break-inside: avoid;
+    }
+}
+
+div {
+    page‐break‐after: always;
+}
+
+header,
+footer {
+    display: none;
+}
+
+.print-div {
+    margin-top: 20px;
+}
+
+a[href]:after {
+    content: " ("attr(href) ")";
+}
+
+a[href^="http"]:not([href*="github.com"]):after {
+    content: " ("attr(href) ")";
+}
+
+body>*:not(main) {
+    display: none;
+}
+
+span {
+    color: black;
+    font-weight: bold;
+}
+
+.text_danger {
+    color: black;
+    font-weight: bold;
+}
+
+.img_1 {
+    page-break-before: always;
+}
