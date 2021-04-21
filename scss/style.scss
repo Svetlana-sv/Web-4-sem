@@ -4,71 +4,90 @@ $colorGrey:#656565;
 $colorBlue:#2699FB;
 $colorLightBlueForBack:#F1F9FF;
 $colorLightBlueForText:#13A1FA;
-body{
-    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+
+%enterField {
+    width: 300px;
+    height: 30px;
+    text-align: center;
+    background-color: $colorLightBlueForBack;
+    border: 1px solid #CAE7FD;
+    border-radius: 5px;
+    margin-right: 15px;
 }
+%textBold{
+    font-size: 1em;
+    color: $colorBlue;
+    font-weight: bold;
+    padding-bottom: 5px;
+    margin-top: 20px;
+}
+
+body {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
 header {
     margin-top: 50px;
     color: $colorGrey;
+
     .header {
         display: flex;
         flex-direction: row;
         position: relative;
         align-items: center;
+
         .logo {
             margin-left: 200px;
             font-size: 34px;
             color: $colorGrey;
             font-weight: bold;
         }
-        .theme{
+
+        .theme {
             position: absolute;
             display: flex;
             align-items: center;
             flex-direction: row;
             right: 100px;
-            .theme-text{
+
+            .theme-text {
                 padding-right: 15px;
             }
         }
     }
 }
-.block1{
+
+.block1 {
     margin-left: 200px;
-    margin-top: 50px;
+    margin-top: 30px;
     display: flex;
     flex-direction: column;
-    p{
-        color: $colorBlue;
-        font-weight: bold;
+
+    p {
+        @extend %textBold;
     }
-    .block1__form{
+
+    .block1__form {
         align-content: center;
-      
-        button{
+
+        button {
             width: 30px;
             height: 30px;
-            
-            
             font-size: 25px;
             color: #fff;
             border: 1px solid $colorBlue;
             background-color: $colorBlue;
             border-radius: 50px;
         }
-        input{
-            width: 300px;
-            height: 30px;
-            text-align: center;
-            background-color: $colorLightBlueForBack;
-            border: 1px solid #CAE7FD;
-            border-radius: 5px;
-            margin-right: 15px;
+
+        input {
+            @extend %enterField;
         }
     }
-   
+
 }
-.container-grid{
+
+.container-grid {
     margin-top: 50px;
     display: grid;
     grid-template-rows: repeat(auto-fit, min(500px));
@@ -76,24 +95,28 @@ header {
     gap: 50px;
     width: 100%;
     justify-content: center;
-    .column{
+
+    .column {
         border: 1px solid $colorBlue;
-            border-radius: 5px;
-            .heading{
-                font-size: 26px;
-                font-weight: bold;
-                text-align: center;
-                color: $colorGrey;
-                padding: 15px;
-            }
+        border-radius: 5px;
+
+        .heading {
+            font-size: 26px;
+            font-weight: bold;
+            text-align: center;
+            color: $colorGrey;
+            padding: 15px;
+        }
     }
-    .container-flex{
-        display: flex;  
+
+    .container-flex {
+        display: flex;
         flex-direction: column;
         width: 100%;
-        
+
         justify-content: center;
-        .card{
+
+        .card {
             margin: auto;
             margin-bottom: 10px;
             padding: 10px;
@@ -102,21 +125,24 @@ header {
             border: 1px solid $colorLightBlueForBack;
             background-color: $colorLightBlueForBack;
             border-radius: 5px;
-            .card-title{
+
+            .card-title {
                 font-size: 1.5em;
                 margin-bottom: 10px;
                 font-weight: bold;
                 color: $colorBlue;
             }
-            .card-task{
+
+            .card-task {
                 font-size: 0.8em;
                 color: $colorLightBlueForText;
             }
-            .btn-edit{
+
+            .btn-edit {
                 width: 30px;
                 height: 30px;
                 background-size: 100%;
-               
+
                 background-image: url(img/btn_edit.png);
                 background-position: center;
                 background-repeat: no-repeat;
@@ -124,9 +150,11 @@ header {
         }
     }
 }
+
 /*кнопка переключения темы*/
-.button-cover, .off, .layer
-{
+.button-cover,
+.off,
+.layer {
     position: absolute;
     top: 0;
     right: 0;
@@ -134,8 +162,7 @@ header {
     left: 0;
 }
 
-.button
-{
+.button {
     position: relative;
     top: 50%;
     width: 74px;
@@ -144,15 +171,14 @@ header {
     overflow: hidden;
 }
 
-.button.r, .button.r .layer
-{
+.button.r,
+.button.r .layer {
     border-radius: 100px;
 }
 
 
 
-.checkbox
-{
+.checkbox {
     position: relative;
     width: 100%;
     height: 100%;
@@ -163,13 +189,11 @@ header {
     z-index: 3;
 }
 
-.off
-{
+.off {
     z-index: 2;
 }
 
-.layer
-{
+.layer {
     width: 100%;
     background-color: #BCE0FD;
     transition: 0.3s ease all;
@@ -177,8 +201,10 @@ header {
 }
 
 
-#button-1 .off:before/*состояние при вкл*/
-{
+#button-1 .off:before
+
+/*состояние при вкл*/
+    {
     content: '';
     position: absolute;
     top: 3px;
@@ -186,7 +212,7 @@ header {
     width: 30px;
     height: 30px;
     color: #fff;
- 
+
     line-height: 1;
     padding: 9px 4px;
     background-color: #fff;
@@ -194,20 +220,22 @@ header {
     transition: 0.3s cubic-bezier(0.18, 0.89, 0.35, 1.15) all;
 }
 
-#button-1 .checkbox:checked + .off:before/*состояние при выкл*/
-{
+#button-1 .checkbox:checked+.off:before
+
+/*состояние при выкл*/
+    {
     content: '';
     left: 42px;
     background-color: #fff;
 }
 
-#button-1 .checkbox:checked ~ .layer
-{
+#button-1 .checkbox:checked~.layer {
     background-color: #ebf7fc;
 }
 
-#button-1 .off, #button-1 .off:before, #button-1 .layer
-{
+#button-1 .off,
+#button-1 .off:before,
+#button-1 .layer {
     transition: 0.3s ease all;
 }
 
@@ -215,19 +243,19 @@ header {
     .header {
         display: flex;
         flex-direction: column;
-      
+
     }
-    .logo{
+
+    .logo {
         margin-left: 10px;
     }
-    .theme{
+
+    .theme {
         position: static;
         margin-left: 100px;
     }
-    .block1{
+
+    .block1 {
         margin-left: 10px;
     }
 }
-
-
-

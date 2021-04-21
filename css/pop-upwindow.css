@@ -86,7 +86,7 @@ h6 {
   font-weight: inherit;
 }
 
-.block1 .block1__form input {
+.pop-up-window .container-items .item input, .pop-up-window .container-items .item select, .block1 .block1__form input {
   width: 300px;
   height: 30px;
   text-align: center;
@@ -96,7 +96,7 @@ h6 {
   margin-right: 15px;
 }
 
-.block1 p {
+.pop-up-window .container-items .item label, .block1 p {
   font-size: 1em;
   color: #2699FB;
   font-weight: bold;
@@ -304,4 +304,29 @@ header .header .theme .theme-text {
   .block1 {
     margin-left: 10px;
   }
-}/*# sourceMappingURL=style.css.map */
+}
+.pop-up-window {
+  margin: auto;
+  display: none;
+  max-width: 600px;
+  height: 500px;
+  border: 1px solid #656565;
+  border-radius: 5px;
+}
+.pop-up-window .container-items {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  justify-content: center;
+}
+.pop-up-window .container-items .item {
+  display: flex;
+  flex-direction: column;
+}
+.pop-up-window .container-items button {
+  width: 250px;
+  height: 30px;
+  background-color: #2699FB;
+  margin-top: 25px;
+  border-radius: 5px;
+}/*# sourceMappingURL=pop-upwindow.css.map */

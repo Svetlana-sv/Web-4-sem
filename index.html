@@ -6,8 +6,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/pop-upwindow.css">
     <title>Канбан-доска</title>
 </head>
+<script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
 
 <body>
     <header>
@@ -15,15 +17,15 @@
             <div class="logo">Канбан</div>
             <div class="theme">
 
-            <p class="theme-text">Темная тема</p>
-                   
-                                <div class="button r" id="button-1">
-                                    <input type="checkbox" class="checkbox">
-                                    <div class="off"></div>
-                                    <div class="layer"></div>
-                                </div>
-                            </div>
-                   
+                <p class="theme-text">Темная тема</p>
+
+                <div class="button r" id="button-1">
+                    <input type="checkbox" class="checkbox">
+                    <div class="off"></div>
+                    <div class="layer"></div>
+                </div>
+            </div>
+
     </header>
     <main>
         <div class="block1">
@@ -78,7 +80,44 @@
                 </div>
             </div>
         </div>
+
+        <div class="pop-up-window"><!--модальное окно-->
+            <div class="container-items">
+                <div class="item">
+                    <label for="text">Описание</label>
+                    <input type="text">
+                </div>
+    
+                <div class="item">
+                    <label for="text">Статус</label>
+                    <select name="status">
+                        <option value="plan">План</option>
+                        <option value="work">В работе</option> 
+                        <option value="done">Готово</option> 
+                      </select> 
+                </div>
+    
+                <div class="item">
+                    <label for="text">Ответственный</label>
+                    <input type="text">
+                </div>
+    
+                <div class="item">
+                    <label for="text">Дата и время начала</label>
+                    <input type="datetime">
+                </div>
+    
+                <div class="item">
+                    <label for="text">Дата и время завершения</label>
+                    <input type="datetime">
+                </div>
+                <button>-</button>
+            </div>
+           
+        </div>
+
     </main>
+
 </body>
 
 </html>
