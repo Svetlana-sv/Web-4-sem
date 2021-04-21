@@ -2,8 +2,8 @@
 
 $colorGrey:#656565;
 $colorBlue:#2699FB;
-$colorLightBlue:#F1F9FF;
-
+$colorLightBlueForBack:#F1F9FF;
+$colorLightBlueForText:#13A1FA;
 body{
     font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
@@ -14,16 +14,22 @@ header {
         display: flex;
         flex-direction: row;
         position: relative;
-        margin-left: 200px;
         align-items: center;
         .logo {
+            margin-left: 200px;
             font-size: 34px;
             color: $colorGrey;
             font-weight: bold;
         }
         .theme{
             position: absolute;
+            display: flex;
+            align-items: center;
+            flex-direction: row;
             right: 100px;
+            .theme-text{
+                padding-right: 15px;
+            }
         }
     }
 }
@@ -54,7 +60,7 @@ header {
             width: 300px;
             height: 30px;
             text-align: center;
-            background-color: $colorLightBlue;
+            background-color: $colorLightBlueForBack;
             border: 1px solid #CAE7FD;
             border-radius: 5px;
             margin-right: 15px;
@@ -65,8 +71,8 @@ header {
 .container-grid{
     margin-top: 50px;
     display: grid;
-    grid-template-rows: repeat(1, min(500px));
-    grid-template-columns: repeat(3, 250px);
+    grid-template-rows: repeat(auto-fit, min(500px));
+    grid-template-columns: repeat(auto-fit, 250px);
     gap: 50px;
     width: 100%;
     justify-content: center;
@@ -85,20 +91,143 @@ header {
         display: flex;  
         flex-direction: column;
         width: 100%;
-        justify-content: space-around;
+        
+        justify-content: center;
         .card{
+            margin: auto;
+            margin-bottom: 10px;
+            padding: 10px;
             width: 200px;
             height: 200px;
-            border: 1px solid $colorLightBlue;
-            background-color: $colorLightBlue;
+            border: 1px solid $colorLightBlueForBack;
+            background-color: $colorLightBlueForBack;
             border-radius: 5px;
+            .card-title{
+                font-size: 1.5em;
+                margin-bottom: 10px;
+                font-weight: bold;
+                color: $colorBlue;
+            }
+            .card-task{
+                font-size: 0.8em;
+                color: $colorLightBlueForText;
+            }
+            .btn-edit{
+                width: 30px;
+                height: 30px;
+                background-size: 100%;
+               
+                background-image: url(img/btn_edit.png);
+                background-position: center;
+                background-repeat: no-repeat;
+            }
         }
     }
 }
+/*кнопка переключения темы*/
+.button-cover, .off, .layer
+{
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+}
 
-@media screen and (max-width : 968px) {
+.button
+{
+    position: relative;
+    top: 50%;
+    width: 74px;
+    height: 36px;
+    margin: auto 0 auto;
+    overflow: hidden;
+}
+
+.button.r, .button.r .layer
+{
+    border-radius: 100px;
+}
+
+
+
+.checkbox
+{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    margin: 0;
+    opacity: 0;
+    cursor: pointer;
+    z-index: 3;
+}
+
+.off
+{
+    z-index: 2;
+}
+
+.layer
+{
+    width: 100%;
+    background-color: #BCE0FD;
+    transition: 0.3s ease all;
+    z-index: 1;
+}
+
+
+#button-1 .off:before/*состояние при вкл*/
+{
+    content: '';
+    position: absolute;
+    top: 3px;
+    left: 4px;
+    width: 30px;
+    height: 30px;
+    color: #fff;
+ 
+    line-height: 1;
+    padding: 9px 4px;
+    background-color: #fff;
+    border-radius: 50%;
+    transition: 0.3s cubic-bezier(0.18, 0.89, 0.35, 1.15) all;
+}
+
+#button-1 .checkbox:checked + .off:before/*состояние при выкл*/
+{
+    content: '';
+    left: 42px;
+    background-color: #fff;
+}
+
+#button-1 .checkbox:checked ~ .layer
+{
+    background-color: #ebf7fc;
+}
+
+#button-1 .off, #button-1 .off:before, #button-1 .layer
+{
+    transition: 0.3s ease all;
+}
+
+@media (max-width : 968px) {
     .header {
         display: flex;
         flex-direction: column;
+      
+    }
+    .logo{
+        margin-left: 10px;
+    }
+    .theme{
+        position: static;
+        margin-left: 100px;
+    }
+    .block1{
+        margin-left: 10px;
     }
 }
+
+
+
