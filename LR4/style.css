@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@100;400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Raleway&display=swap');
 
 
 
@@ -617,7 +617,10 @@ footer.nav {
     }
 
     .block2__container {
-        margin-left: 10px;
+        margin: auto;
+    }
+    .block2__div__number{
+        display: none;
     }
 
     .block2__main {
@@ -638,7 +641,7 @@ footer.nav {
 
     }
     .block4__container__text{
-        min-width: 100%;
+        max-width: 100%;
     }
 
     .block4__container__img {
@@ -734,6 +737,32 @@ footer.nav {
     }
     footer li{
         padding-top: 20px;
+    }
+}
+@media (max-width: 800px) and (min-width:600px) {
+    .block4__container{
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        text-align: center;
+        max-height: 100%;
+        max-width: 100%;
+        
+    }
+    .block4__container__img{
+        margin: auto;
+        width: 200px;
+    }
+    .block4__container__text{
+       width: 200px;
+       height: 200px;
+      
+        
+    }
+    .block4__container__center{
+        max-width: 200px;
+
+        
     }
 }
 
