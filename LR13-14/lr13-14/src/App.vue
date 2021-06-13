@@ -52,7 +52,11 @@
     <Form
       @save="save"
      />
+      <footer>
+    <a href="https://github.com/Svetlana-sv/Web-4-sem/tree/project">GitHub</a>
+  </footer>
   </body>
+ 
 </template>
 
 <script>
@@ -232,7 +236,7 @@ export default {
         task.time_end = new Date(toEdit[2]);
 
       console.log(task);
-      this.lists[toEdit.[0]].items.push(task);
+      this.lists[toEdit[0]].items.push(task);
     }
   },
 };
@@ -392,6 +396,24 @@ input::placeholder {
 .theme-border {
   border: 1px solid var(--text-color-primary-black);
 }
+footer {
+  position: fixed;
+  opacity: 0.5;
+  margin-top: 70px;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 40px;
+  text-align: center;
+  vertical-align: middle;
+  background: #75c791;
+}
+a{
+  color: #000000;
+  font-size: 2em;
+  text-decoration: none;
+}
+
 @media (max-width: 1000px) and (min-width: 600px) {
   main {
     width: 100%;
