@@ -98,19 +98,21 @@ export default {
   methods: {
     createTask: function () {
       var text = document.getElementById("description").value;
+      document.getElementById("description").value = '';
       var time = new Date();
 
       if (text === '')
-        text = `${this.card_count}`;
+        text = `your description`;
 
-      this.lists[0].items.push({
+        this.card_count++;
+        this.lists[0].items.push({
         id: this.card_count,
-        head: text,
+        head: this.card_count,
         time_start: time,
-        description: "description",
+        time_end: time, 
+        description: text,
         owner: "owner",
-      });
-      this.card_count++;
+      })
     },
     deleteTask(col,index){
         this.$delete(this.lists[col].items,index);
@@ -122,11 +124,11 @@ export default {
       var task = this.lists[col].items[index];
       document.getElementById('discription_id').value = task.description;
       if (col==0)
-        document.getElementById('dropdown_text__name').innerHTML = 'План';
+        document.getElementById('menu_text__name').innerHTML = 'План';
       else if (col==1)
-        document.getElementById('dropdown_text__name').innerHTML = 'В работе';
+        document.getElementById('menu_text__name').innerHTML = 'В работе';
       else
-        document.getElementById('dropdown_text__name').innerHTML = 'Готово';
+        document.getElementById('menu_text__name').innerHTML = 'Готово';
 
       document.getElementById('owner_input').value = task.owner;
       document.getElementById('date_start_input').value = this.parseDate(task.time_start);

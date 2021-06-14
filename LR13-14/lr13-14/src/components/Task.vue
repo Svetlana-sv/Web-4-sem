@@ -53,7 +53,7 @@ export default {
       default: -1,
     },
     head: {
-      type: String,
+      type: Number,
       default: "template head",
     },
     index: Number,
