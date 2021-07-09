@@ -34,9 +34,13 @@
           v-on:delete-todo="deleteTodo"
           v-for="(todo, index) in todos"
           v-bind:todo="todo"
+          :level="todo.level"
           v-bind:key="index"
         />
       </div>
+      <footer class="footer">
+        Каменских Светлана Сергеевна, группа 191-361, 09.07.2021
+      </footer>
     </div>
   </body>
 </template>
@@ -91,6 +95,7 @@ export default {
   --black-color: rgb(0, 0, 0);
   --backg-color: white;
   --button: rgb(233, 231, 231);
+  --width: 200px;
 }
 * {
   margin: 0;
@@ -141,6 +146,19 @@ body {
   vertical-align: middle;
 }
 .header__theme {
+}
+.footer{
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  min-height: 80px;
+  position: fixed;
+  justify-content: center;
+  background: var(--header-color);
+  align-items: center;
+  display: flex;
+  z-index: 100;
+  padding: 10px 10px;
 }
 .container_cards {
   max-width: 100%;

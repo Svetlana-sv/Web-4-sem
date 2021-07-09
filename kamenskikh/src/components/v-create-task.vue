@@ -4,7 +4,7 @@
       Добавить
     </button>
     <div class="modal" v-show="isCreating">
-      <form class="form">
+      <form class="form"> 
         <legend>Добавление задачи</legend>
         <div class="form__item">
           <label>Описание</label>
@@ -19,16 +19,16 @@
         </div>
         <div class="form__item">
           <label>Сложность задачи</label>
-          <select v-model="level">
-            <option disabled value="">Выберите сложность задачи</option>
-            <option>Легкая</option>
-            <option>Средняя</option>
-            <option>Сложная</option>
+          <select v-model="level" required>
+            <option disabled value="">Выберите важность задачи</option>
+            <option>Не важно</option>
+            <option>Важно</option>
+            <option>Очень важно</option>
           </select>
         </div>
         <div class="form__buttons">
-          <button class="" v-on:click="sendForm" type="submit">Добавить</button>
-          <button class="" v-on:click="closeForm" type="submit">Закрыть</button>
+          <button class="" v-on:click="sendForm()" type="submit" >Добавить</button>
+          <button class="" v-on:click="closeForm()" >Закрыть</button>
         </div>
       </form>
     </div>
