@@ -4,7 +4,7 @@
       Добавить
     </button>
     <div class="modal" v-show="isCreating">
-      <form class="form"> 
+      <form class="form" v-on:submit.prevent="onSubmit">
         <legend>Добавление задачи</legend>
         <div class="form__item">
           <label>Описание</label>
@@ -27,8 +27,10 @@
           </select>
         </div>
         <div class="form__buttons">
-          <button class="" v-on:click="sendForm()" type="submit" >Добавить</button>
-          <button class="" v-on:click="closeForm()" >Закрыть</button>
+          <button class="" v-on:click="sendForm()" type="submit">
+            Добавить
+          </button>
+          <button class="" v-on:click="closeForm()" type="submit">Закрыть</button>
         </div>
       </form>
     </div>
@@ -137,5 +139,21 @@ legend {
 
   margin: 10px;
   color: var(--black-color);
+}
+@media screen and (max-width: 450px) {
+  form {
+    max-width: 400px;
+  }
+  .form__item {
+    display: flex;
+    flex-direction: column;
+  }
+  .form__item select {
+    width: 150px;
+  }
+  .form__item input {
+    width: 150px;
+  }
+
 }
 </style>

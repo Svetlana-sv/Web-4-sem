@@ -68,5 +68,19 @@ button{
 .button{
     margin: auto;
 }
+@media screen and (max-width: 400px) {
+    .one{
+    max-width: 100px;
+}
+.two{
+    max-width: 200px;
+}
+.three{
+ max-width: 300px;
+}
+button{
+    max-width: 120px;
+}
+}
 
 </style>

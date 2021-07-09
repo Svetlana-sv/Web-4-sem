@@ -6,8 +6,8 @@
           <img
             srcset="
               ./assets/logo-256.png 1200w,
-              ./assets/logo-64.png   600w,
-              ./assets/logo-16.png   300w
+              ./assets/logo-64.png  600w,
+              ./assets/logo-16.png  300w
             "
             sizes="(max-width: 320px) 280px,
             (max-width: 480px) 440px,
@@ -157,6 +157,7 @@ body {
   vertical-align: middle;
 }
 .header__theme {
+
 }
 .footer {
   left: 0;
