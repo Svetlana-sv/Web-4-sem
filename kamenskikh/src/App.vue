@@ -1,10 +1,11 @@
 <template>
-  <header class="header">
+<div>
+<header class="header">
     <div class="header__inner">
       <div class="header__logo">
         <img
           srcset="
-            ./assets/logo-256.png 1400w,
+            ./assets/logo-256.png 1200w,
             ./assets/logo-64.png   600w,
             ./assets/logo-16.png   300w
           "
@@ -26,20 +27,41 @@
       </div>
     </div>
   </header>
+  <div>
+ <vCreateTask v-on:create-todo="addTodo" />
+    <vCard
+      v-for="(todo,index) in todos" 
+      v-bind:todo="todo" 
+      v-bind:key="index"
+    />
+  </div>
+   
+</div>
+  
 </template>
 
 <script>
-// import HelloWorld from "./components/HelloWorld.vue";
+import vCreateTask from "./components/v-create-task.vue";
+import vCard from "./components/v-card.vue";
 import { ToggleButton } from "vue-js-toggle-button";
+
 
 export default {
   name: "App",
   components: {
     ToggleButton,
+    vCreateTask,
+    vCard
   },
   data() {
     return {
-      theme_switch: false,
+      theme_switch: true,
+      todos: [
+        {
+          title: "Task",
+          level: "Легкая",
+        }
+      ]
     };
   },
   methods: {
@@ -55,6 +77,9 @@ export default {
       }
       this.theme_switch = !this.theme_switch;
     },
+     addTodo(todo) {
+      this.todos.push(todo);
+    }
   },
 };
 </script>
