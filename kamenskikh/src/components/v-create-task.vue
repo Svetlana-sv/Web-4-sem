@@ -70,8 +70,9 @@ export default {
 
 <style>
 #modal {
-  display: static;
+  position: absolute;
   text-align: center;
+  top: 200px;
   display: flex;
   margin: auto;
   border: 1px solid var(--black-color);

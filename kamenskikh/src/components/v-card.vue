@@ -1,11 +1,8 @@
 <template>
-  <div class="card">
+  <div class="card" v-bind:class="[{one: this.level === 'Не важно'},{two: this.level === 'Важно'},{three: this.level === 'Очень важно'}]">
     <div class="content">
       <div class="title">
         {{ todo.title }}
-      </div>
-      <div class="level">
-        {{ todo.level }}
       </div>
       <div class="button">
         <button v-on:click="deleteTodo(todo)">Удалить</button>
@@ -17,7 +14,7 @@
 <script>
 export default {
   props: {
-      todo: Array,
+      todo: [],
         level: String},
   data() {
     return {
@@ -29,12 +26,7 @@ export default {
       this.$emit("delete-todo", todo);
     },
    
-  }, created(){
-        console.log(this.level);
-        if(this.level==="Очень важно"){
-             document.documentElement.style.setProperty("--width", "600px");
-        }
-    }
+  }
 };
 </script>
 
@@ -44,7 +36,7 @@ export default {
 } */
 .card {
   border: 1px solid var(--black-color);
-  width: var(--width);
+  width: 400px;
   border-radius: 20px;
   padding: 10px;
   margin: auto;
@@ -52,9 +44,29 @@ export default {
 }
 .title{
 color: var(--text-color);
+  white-space: normal;
+    word-break: break-all;
+    overflow: visible;
+    text-overflow: clip;
+    font-size: 1.5em;
+    margin-bottom: 10px;
+    font-weight: bold;
 }
-.title{
-    color: var(--text-color);
+
+.one{
+    width: 200px;
+}
+.two{
+    width: 300px;
+}
+.three{
+ width: 400px;
+}
+button{
+    margin: auto;
+}
+.button{
+    margin: auto;
 }
 
 </style>

@@ -39,7 +39,9 @@
         />
       </div>
       <footer class="footer">
-        Каменских Светлана Сергеевна, группа 191-361, 09.07.2021
+        <div class="footer__text">
+          Каменских Светлана Сергеевна, группа 191-361, 09.07.2021
+        </div>
       </footer>
     </div>
   </body>
@@ -72,13 +74,22 @@ export default {
       if (this.theme_switch) {
         document.documentElement.style.setProperty("--header-color", "#000000");
         document.documentElement.style.setProperty("--black-color", "#ffffff");
-        document.documentElement.style.setProperty("--backg-color", "rgb(43, 42, 44)");
-         document.documentElement.style.setProperty("--button", "rgb(30, 30, 30)");
+        document.documentElement.style.setProperty(
+          "--backg-color",
+          "rgb(43, 42, 44)"
+        );
+        document.documentElement.style.setProperty(
+          "--button",
+          "rgb(30, 30, 30)"
+        );
       } else {
         document.documentElement.style.setProperty("--header-color", "#02a6e2");
         document.documentElement.style.setProperty("--black-color", "#000000");
         document.documentElement.style.setProperty("--backg-color", "#ffffff");
-         document.documentElement.style.setProperty("--button", "rgb(233, 231, 231)");
+        document.documentElement.style.setProperty(
+          "--button",
+          "rgb(233, 231, 231)"
+        );
       }
       this.theme_switch = !this.theme_switch;
     },
@@ -122,7 +133,7 @@ body {
   align-items: center;
   display: flex;
   z-index: 100;
-  padding: 10px 10px;
+  padding: 10px 0px;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
 .header__logo {
@@ -147,7 +158,7 @@ body {
 }
 .header__theme {
 }
-.footer{
+.footer {
   left: 0;
   bottom: 0;
   width: 100%;
@@ -159,6 +170,9 @@ body {
   display: flex;
   z-index: 100;
   padding: 10px 10px;
+}
+.footer__text {
+  color: var(--black-color);
 }
 .container_cards {
   max-width: 100%;
