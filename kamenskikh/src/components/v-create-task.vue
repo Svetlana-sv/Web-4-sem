@@ -27,7 +27,7 @@
           </select>
         </div>
         <div class="form__buttons">
-          <button class="" v-on:click="sendForm()" type="submit">
+          <button class="" v-on:click="sendForm()" type="submit" :disabled="disabled">
             Добавить
           </button>
           <button class="" v-on:click="closeForm()" type="submit">Закрыть</button>
@@ -52,6 +52,8 @@ export default {
     },
     closeForm() {
       this.isCreating = false;
+       this.titleText= "";
+      this.level= ""
     },
     sendForm() {
       if (this.titleText.length > 0 && this.level != "") {
@@ -67,6 +69,11 @@ export default {
       }
     },
   },
+  computed: {
+    disabled: function() {
+      return (this.titleText.length > 0 && this.level != "") ? false : true;
+    }
+  }
 };
 </script>
 
