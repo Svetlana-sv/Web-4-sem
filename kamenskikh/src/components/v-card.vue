@@ -1,14 +1,16 @@
 <template>
-  <div class='ui centered card'>
+  <div class="card">
     <div class="content">
-      <div class='title'>
-          {{ todo.title }}
+      <div class="title">
+        {{ todo.title }}
       </div>
-      <div class='level'>
-          {{ todo.level }}
+      <div class="level">
+        {{ todo.level }}
       </div>
-    </div>   
-    
+      <div>
+        <button v-on:click="deleteTodo(todo)">Удалить</button>
+      </div>
+    </div>
   </div>
 </template>
 
@@ -16,12 +18,13 @@
 export default {
   props: ["todo"],
   data() {
-    return {
-     
-    };
+    return {};
   },
   methods: {
-  }
+    deleteTodo(todo) {
+      this.$emit("delete-todo", todo);
+    },
+  },
 };
 </script>
 
@@ -29,5 +32,18 @@ export default {
 /* .button[disabled] {
   cursor: not-allowed;
 } */
-
+.card {
+  border: 1px solid var(--black-color);
+  max-width: 400px;
+  border-radius: 20px;
+  padding: 10px;
+  margin: auto;
+  margin-bottom: 20px;
+}
+.title{
+color: var(--text-color);
+}
+.title{
+    color: var(--text-color);
+}
 </style>

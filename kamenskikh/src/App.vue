@@ -1,43 +1,44 @@
 <template>
-<div>
-<header class="header">
-    <div class="header__inner">
-      <div class="header__logo">
-        <img
-          srcset="
-            ./assets/logo-256.png 1200w,
-            ./assets/logo-64.png   600w,
-            ./assets/logo-16.png   300w
-          "
-          sizes="(max-width: 320px) 280px,
+  <body>
+    <header class="header">
+      <div class="header__inner">
+        <div class="header__logo">
+          <img
+            srcset="
+              ./assets/logo-256.png 1200w,
+              ./assets/logo-64.png   600w,
+              ./assets/logo-16.png   300w
+            "
+            sizes="(max-width: 320px) 280px,
             (max-width: 480px) 440px,
             800px"
-          src="./assets/logo-256.png"
-          alt="Logo ToDo List"
-        />
+            src="./assets/logo-256.png"
+            alt="Logo ToDo List"
+          />
+        </div>
+        <div class="header__name">Kamenskikh</div>
+        <div class="header__theme">
+          <toggle-button
+            :value="true"
+            class="theme"
+            :labels="{ checked: 'on', unchecked: 'off' }"
+            @change="ChangeTheme()"
+          />
+        </div>
       </div>
-      <div class="header__name">Kamenskikh</div>
-      <div class="header__theme">
-        <toggle-button
-          :value="true"
-          class="theme"
-          :labels="{ checked: 'on', unchecked: 'off' }"
-          @change="ChangeTheme()"
+    </header>
+    <div>
+      <vCreateTask v-on:create-todo="addTodo" />
+      <div class="container_cards">
+        <vCard
+          v-on:delete-todo="deleteTodo"
+          v-for="(todo, index) in todos"
+          v-bind:todo="todo"
+          v-bind:key="index"
         />
       </div>
     </div>
-  </header>
-  <div>
- <vCreateTask v-on:create-todo="addTodo" />
-    <vCard
-      v-for="(todo,index) in todos" 
-      v-bind:todo="todo" 
-      v-bind:key="index"
-    />
-  </div>
-   
-</div>
-  
+  </body>
 </template>
 
 <script>
@@ -45,41 +46,41 @@ import vCreateTask from "./components/v-create-task.vue";
 import vCard from "./components/v-card.vue";
 import { ToggleButton } from "vue-js-toggle-button";
 
-
 export default {
   name: "App",
   components: {
     ToggleButton,
     vCreateTask,
-    vCard
+    vCard,
   },
   data() {
     return {
       theme_switch: true,
-      todos: [
-        {
-          title: "Task",
-          level: "Легкая",
-        }
-      ]
+      todos: [],
     };
   },
   methods: {
+    deleteTodo(todo) {
+      const todoIndex = this.todos.indexOf(todo);
+      this.todos.splice(todoIndex, 1);
+    },
     ChangeTheme() {
       if (this.theme_switch) {
         document.documentElement.style.setProperty("--header-color", "#000000");
-        document.documentElement.style.setProperty("--text-color", "#ffffff");
-        document.documentElement.style.setProperty("--backg-color", "#000000");
+        document.documentElement.style.setProperty("--black-color", "#ffffff");
+        document.documentElement.style.setProperty("--backg-color", "rgb(43, 42, 44)");
+         document.documentElement.style.setProperty("--button", "rgb(30, 30, 30)");
       } else {
         document.documentElement.style.setProperty("--header-color", "#02a6e2");
-        document.documentElement.style.setProperty("--text-color", "#000000");
+        document.documentElement.style.setProperty("--black-color", "#000000");
         document.documentElement.style.setProperty("--backg-color", "#ffffff");
+         document.documentElement.style.setProperty("--button", "rgb(233, 231, 231)");
       }
       this.theme_switch = !this.theme_switch;
     },
-     addTodo(todo) {
+    addTodo(todo) {
       this.todos.push(todo);
-    }
+    },
   },
 };
 </script>
@@ -87,8 +88,9 @@ export default {
 <style>
 :root {
   --header-color: #02a6e2;
-  --text-color: rgb(0, 0, 0);
+  --black-color: rgb(0, 0, 0);
   --backg-color: white;
+  --button: rgb(233, 231, 231);
 }
 * {
   margin: 0;
@@ -99,9 +101,11 @@ export default {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
-  color: var(--text-color);
-  background-color: var(--backg-color);
+  color: var(--black-color);
   margin-top: 60px;
+}
+body {
+  background-color: var(--backg-color);
 }
 
 .header {
@@ -130,13 +134,20 @@ export default {
   padding: 0;
 }
 .header__name {
-  color: var(--text-color);
+  color: var(--black-color);
   font-size: 1.5em;
   display: flex;
   flex-direction: row;
   vertical-align: middle;
 }
 .header__theme {
+}
+.container_cards {
+  max-width: 100%;
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+  justify-content: center;
 }
 
 @media screen and (max-width: 400px) {

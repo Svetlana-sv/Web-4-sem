@@ -4,33 +4,33 @@
       Добавить
     </button>
     <div class="modal" v-show="isCreating">
-        <form class="form">
-          <legend>Добавление задачи</legend>
-          <div class="form__item">
-            <label>Описание</label>
-            <input
-              v-model="titleText"
-              type="text"
-              ref="title"
-              defaultValue=""
-              required
-              placeholder="Описание задачи"
-            />
-          </div>
-          <div class="form__item">
-            <label>Сложность задачи</label>
-            <select v-model="level">
-              <option disabled value="">Выберите сложность задачи</option>
-              <option>Легкая</option>
-              <option>Средняя</option>
-              <option>Сложная</option>
-            </select>
-          </div>
-          <div class="form__buttons">
-            <button class="" v-on:click="sendForm">Добавить</button>
-            <button class="" v-on:click="closeForm">Закрыть</button>
-          </div>
-        </form>
+      <form class="form">
+        <legend>Добавление задачи</legend>
+        <div class="form__item">
+          <label>Описание</label>
+          <input
+            v-model="titleText"
+            type="text"
+            ref="title"
+            defaultValue=""
+            required
+            placeholder="Описание задачи"
+          />
+        </div>
+        <div class="form__item">
+          <label>Сложность задачи</label>
+          <select v-model="level">
+            <option disabled value="">Выберите сложность задачи</option>
+            <option>Легкая</option>
+            <option>Средняя</option>
+            <option>Сложная</option>
+          </select>
+        </div>
+        <div class="form__buttons">
+          <button class="" v-on:click="sendForm" type="submit">Добавить</button>
+          <button class="" v-on:click="closeForm" type="submit">Закрыть</button>
+        </div>
+      </form>
     </div>
   </div>
 </template>
@@ -52,12 +52,12 @@ export default {
       this.isCreating = false;
     },
     sendForm() {
-      if (this.titleText.length > 0 && this.level!="") {
+      if (this.titleText.length > 0 && this.level != "") {
         const title = this.titleText;
-        const levelText = this.level;
+        const level = this.level;
         this.$emit("create-todo", {
           title,
-          levelText,
+          level,
         });
         this.titleText = "";
         this.level = "";
@@ -72,16 +72,16 @@ export default {
 #modal {
   display: static;
   text-align: center;
- display: flex;
- margin: auto;
- border: 1px solid #000;
+  display: flex;
+  margin: auto;
+  border: 1px solid var(--black-color);
   border-radius: 20px;
 }
 .container {
   padding: 15px;
   display: flex;
   justify-content: center;
-  
+
   font-size: 1.5em;
 }
 button {
@@ -89,23 +89,24 @@ button {
   width: 160px;
   border-radius: 20px;
   font-size: 1em;
-  color: var(--text-color);
+  color: var(--black-color);
+  background: var(--button);
 }
-.form{
-    border: 1px solid #000;
+.form {
+  border: 1px solid var(--black-color);
   border-radius: 20px;
   padding: 10px;
 }
-.form__item{
-    display: grid;
+.form__item {
+  display: grid;
   grid-template-columns: 1fr 1fr;
   text-align: left;
   margin: 5px;
 }
-.form__buttons{
- display:flex;
- margin: 0;
- justify-content: center;
+.form__buttons {
+  display: flex;
+  margin: 0;
+  justify-content: center;
 }
 .form__item input {
   width: 300px;
@@ -128,12 +129,12 @@ button {
   margin: auto;
 }
 .form__item label {
-  color: var(--text-color);
+  color: var(--black-color);
 }
 legend {
   text-align: center;
 
   margin: 10px;
-  color: var(--text-color);
+  color: var(--black-color);
 }
 </style>
